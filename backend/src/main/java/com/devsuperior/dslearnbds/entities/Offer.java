@@ -29,9 +29,9 @@ public class Offer implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "course_id")
 	private Course course;
-
+	
 	@OneToMany(mappedBy = "offer")
-	private List<Resource> resorces = new ArrayList<>();
+	private List<Resource> resources = new ArrayList<>();
 	
 	public Offer() {
 	}
@@ -85,8 +85,12 @@ public class Offer implements Serializable {
 		this.course = course;
 	}
 	
-	public List<Resource> getResorces() {
-		return resorces;
+	public List<Resource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<Resource> resources) {
+		this.resources = resources;
 	}
 
 	@Override
